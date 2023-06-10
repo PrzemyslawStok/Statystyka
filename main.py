@@ -1,6 +1,7 @@
 import numpy as np
 from matplotlib import pyplot as plot
 
+
 def simplePlot():
     X = np.linspace(0, 2 * np.pi, 100)
     print(X)
@@ -9,11 +10,22 @@ def simplePlot():
     plot.plot(X, Y)
     plot.show()
 
+
+def hist_fun0(array_height: np.ndarray, n: int = 2) -> np.ndarray:
+    array_height = np.concatenate([array_height, np.random.normal(180, size=5000)])
+    x = 0
+    y = 0.5 * x ** 2 + 1
+    return array_height
+
+
 def distNormal():
     array_height = np.random.normal(150, size=10_000)
     array_height = np.concatenate([array_height, np.random.normal(180, size=5000)])
 
     print(array_height)
+
+    array_height = np.zeros([0])
+    array_height = hist_fun0(array_height)
 
     Y = array_height
     X = np.arange(0, len(array_height))
