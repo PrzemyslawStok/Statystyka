@@ -20,6 +20,13 @@ def hist_fun0(array_height: np.ndarray, n: int = 2) -> np.ndarray:
     return array_height
 
 
+def gauss_fun(mu: float, sigma: float) -> (np.ndarray, np.ndarray):
+    X = np.linspace(-5 * mu, +5 * mu, 10_000)
+    Y = np.zeros(len(X))
+
+    return (X, Y)
+
+
 def distNormal():
     array_height = np.random.normal(150, size=10_000)
     array_height = np.concatenate([array_height, np.random.normal(180, size=5000)])
@@ -38,6 +45,10 @@ def distNormal():
     # print(np.sort(array_height))
 
     plot.hist(array_height, bins=100)
+    plot.show()
+
+    X, Y = gauss_fun(167, 0.2)
+    plot.scatter(X,Y)
     plot.show()
 
     print(f"average: {np.average(array_height)}")
