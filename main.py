@@ -11,7 +11,7 @@ def simplePlot():
     plot.show()
 
 def distNormal():
-    array_height = np.random.normal(167, size=1000)
+    array_height = np.random.normal(167, size=100)
     array_height = np.concatenate([array_height, np.random.normal(180, size=100)])
 
     # print(array_height)
