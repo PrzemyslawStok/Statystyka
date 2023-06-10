@@ -12,9 +12,11 @@ def simplePlot():
 
 
 def hist_fun0(array_height: np.ndarray, n: int = 2) -> np.ndarray:
-    array_height = np.concatenate([array_height, np.random.normal(180, size=5000)])
-    x = 0
-    y = 0.5 * x ** 2 + 1
+    for i in range(n):
+        x = 20 * i
+        y = 0.5 * x ** 2 + 1
+        array_height = np.concatenate([array_height, np.random.normal(x, size=5000)])
+
     return array_height
 
 
@@ -25,7 +27,7 @@ def distNormal():
     print(array_height)
 
     array_height = np.zeros([0])
-    array_height = hist_fun0(array_height)
+    array_height = hist_fun0(array_height, n=5)
 
     Y = array_height
     X = np.arange(0, len(array_height))
