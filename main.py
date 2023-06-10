@@ -1,7 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plot
 
-
 def simplePlot():
     X = np.linspace(0, 2 * np.pi, 100)
     print(X)
@@ -11,20 +10,20 @@ def simplePlot():
     plot.show()
 
 def distNormal():
-    array_height = np.random.normal(167, size=100)
-    array_height = np.concatenate([array_height, np.random.normal(180, size=100)])
+    array_height = np.random.normal(150, size=10_000)
+    array_height = np.concatenate([array_height, np.random.normal(180, size=5000)])
 
-    # print(array_height)
+    print(array_height)
 
     Y = array_height
     X = np.arange(0, len(array_height))
 
-    plot.plot(X, Y)
+    plot.scatter(X, Y)
     plot.show()
 
     # print(np.sort(array_height))
 
-    plot.hist(array_height, bins=1000)
+    plot.hist(array_height, bins=100)
     plot.show()
 
     print(f"average: {np.average(array_height)}")
